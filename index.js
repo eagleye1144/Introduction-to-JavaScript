@@ -58,11 +58,11 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a,b){
+    return a * b;
   }
 
-
+console.log(multiply(1,2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
@@ -74,10 +74,10 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(number){
+   return number * 7;
 }
-
+console.log(dogYears(1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -107,10 +107,36 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
+function hungryDog(weight, age){
     /*add your code here*/
+    if (age < 0.34){
+      return weight * .10;
+    }
+      else if(age < 0.59 && age > 0.34){
+        return weight *.05;
+      }
+      else if (age < 1 && age > 0.59){
+        return weight *0.04;
+      }
+      else {
+        if(weight <= 5){
+        return weight * 0.05;
+        }
+          else if (weight > 5 && weight <=10){
+            return weight * 0.04;
+          }
+          else if (weight > 10 && weight <=15){
+            return weight * 0.03;
+          }
+          else {
+            return weight * 0.02;
+          }
+         
+      }
+      
+    
   }
-
+console.log(hungryDog(3,.5));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -134,10 +160,53 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-function game(user, computer){
+function game(user, computer = Math.random()){
     /*add your code here*/
-}
-  
+         
+      if (computer <= 0.3){
+        computer = 'paper';
+      }
+      else if (computer > 0.3 && computer <=0.6){
+        computer = 'rock';
+      }
+      else if( computer > 0.6){
+        computer = "scissors";
+      }
+
+    if (user === 'scissors' && computer === 'paper'){
+       return 'you win!';
+    }
+    else if(user === 'scissors' && computer === 'rock'){
+      return 'you lose!';
+    }
+    else if(user === 'scissors' && computer === 'scissors'){
+      return "it's a tie";
+    }
+    else {
+       if (user === 'paper' && computer === 'rock'){
+        return 'you win!';
+          }
+       else if (user === 'paper' && computer === 'scissors'){
+        return "you lose!";
+         }
+       else if (user === 'paper' && computer === 'paper'){
+        return "it's a tie";
+    }
+    
+        else {
+             if (user === 'rock' && computer ==='scissors'){
+              return "you win!";
+             }
+             else if (user === 'rock' && computer ==='paper'){
+              return "you lose!";
+             }
+             else if (user === 'rock' && computer ==='rock'){
+              return "it's a tie";
+            }     
+        }
+      }
+    }
+
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
